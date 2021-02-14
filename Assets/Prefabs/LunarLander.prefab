@@ -12881,6 +12881,8 @@ MonoBehaviour:
   explosion: {fileID: 0}
   rocketSound: {fileID: 8300000, guid: d210fbf933fa1895e935f998d468a7c6, type: 3}
   explosionSound: {fileID: 8300000, guid: 91a919bb85894b3108bcb5ec019021ff, type: 3}
+  fatalDamageCrashSound: {fileID: 8300000, guid: 6f44603459d8e1b878e8208ce53d74c5,
+    type: 3}
   instaDeathCapsuleImpactForce: 0
   instaDeathLegImpactForce: 0
   fatalDamageLegImpactForce: 0

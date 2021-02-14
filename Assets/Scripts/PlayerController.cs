@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private GameObject explosion;
 	[SerializeField]
-	private AudioClip rocketSound, explosionSound;
+	private AudioClip rocketSound, explosionSound,fatalDamageCrashSound;
 	[SerializeField]
 	private float instaDeathCapsuleImpactForce,instaDeathLegImpactForce,fatalDamageLegImpactForce;
 
@@ -113,6 +113,8 @@ public class PlayerController : MonoBehaviour
 			if(collision.impulse.magnitude > instaDeathLegImpactForce){
 				Explode();
 			}else if(collision.impulse.magnitude > fatalDamageLegImpactForce){
+				//AudioClip.PlayOneShot(fatalDamageCrashSound) ;
+				//simultaneousAudioSource.Play();
 				StartCoroutine(LossOfControl());
 			}
 		}else if(collision.impulse.magnitude > instaDeathCapsuleImpactForce){

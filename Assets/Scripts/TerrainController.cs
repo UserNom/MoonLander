@@ -12,8 +12,8 @@ public class TerrainController : MonoBehaviour{
     void Start()
     {
         Terrain t = GetComponent<Terrain>();
-		int hmWidth= t.terrainData.heightmapWidth;
-		int hmHeight= t.terrainData.heightmapHeight;
+		int hmWidth= t.terrainData.heightmapResolution;
+		int hmHeight= t.terrainData.heightmapResolution;
 
 		float[] oneDimensionalTerrain = new float[hmWidth];
 
