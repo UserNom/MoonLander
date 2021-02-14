@@ -84,7 +84,8 @@ public class PlayerController : MonoBehaviour
 		}
 		if(mainThrusterFiring){
 			mainThruster.Play();
-			if(!audioSource.isPlaying){
+			//audioSource.clip = rocketSound;
+			if(!audioSource.isPlaying || audioSource.clip != rocketSound){
 				audioSource.clip = rocketSound;
 				audioSource.Play();
 			}
@@ -113,8 +114,9 @@ public class PlayerController : MonoBehaviour
 			if(collision.impulse.magnitude > instaDeathLegImpactForce){
 				Explode();
 			}else if(collision.impulse.magnitude > fatalDamageLegImpactForce){
-				//AudioClip.PlayOneShot(fatalDamageCrashSound) ;
-				//simultaneousAudioSource.Play();
+				if(!isOutOfControl){
+					audioSource.PlayOneShot(fatalDamageCrashSound) ;
+				}
 				StartCoroutine(LossOfControl());
 			}
 		}else if(collision.impulse.magnitude > instaDeathCapsuleImpactForce){
