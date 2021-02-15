@@ -9,6 +9,17 @@ public class GameController : MonoBehaviour
 /* 	[SerializeField]
 	private EndOfGame youWin, youLose; */
 
+	/*TODO: add class Goal. each goal registers itself in the game controller on start. 
+		goals can be required for a win, or optional (achievenments, bonus points)...
+		Goals can call 
+		completed() -move to the completedGoals list
+		failed() -move to the failedGoals list
+		each time, the gamecontroller checks the pending goals and decides if the game is won or lost
+		eg: no required goals in pendinggoals or failedgoals list
+		add goals for landingzones and instead of triggering a win just mark goal as completed
+		add goal for fuel? O2? not exploding?
+	*/
+
 	private GameWin gameWin;
 	//[SerializeField]
 	private GameLoss gameLoss;
