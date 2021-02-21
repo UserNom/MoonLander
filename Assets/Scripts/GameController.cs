@@ -18,6 +18,18 @@ public class GameController : MonoBehaviour
 		eg: no required goals in pendinggoals or failedgoals list
 		add goals for landingzones and instead of triggering a win just mark goal as completed
 		add goal for fuel? O2? not exploding?
+
+		-------
+		Event listeners?
+		Landed
+		Landed on pad
+		Landed on terrain
+		TookFatalDamage
+		LanderExploded
+		OutOfFuel
+		OutOfO2
+		
+		
 	*/
 
 	private GameWin gameWin;

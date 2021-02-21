@@ -13,6 +13,13 @@ public class LandingZoneController : MonoBehaviour
 	private Coroutine winTimer;
 	private Material padMaterial;
 	private Color originalPadColor, originalPadEmissionColor;
+
+	private static List<LandingZoneController> landingPads = new List<LandingZoneController>();
+
+	private void Awake() {
+		landingPads.Add(this);	
+	}
+
 	// Start is called before the first frame update
     void Start()
     {
@@ -34,6 +41,11 @@ public class LandingZoneController : MonoBehaviour
 
 	IEnumerator WinTimer(float t){
 		yield return new  WaitForSeconds(t);
+		if(landingPads.Count>1 && landingPads.Contains(this)){
+			landingPads.Remove(this);
+			Destroy(this);
+			yield break;
+		}
 		Debug.Log("U Win!!!!!11!");
 		GetComponentInParent<GameController>().Win();
 	}
@@ -96,5 +108,8 @@ public class LandingZoneController : MonoBehaviour
 
 	void OnDestroy(){
 		Destroy(padMaterial);
+		if(landingPads.Contains(this)){
+			landingPads.Remove(this);
+		}
 	}
 }

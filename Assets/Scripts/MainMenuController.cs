@@ -34,6 +34,10 @@ public class MainMenuController : MonoBehaviour
 		startHardDifficulty.GetComponentInChildren<Text>().text = "HARD MODE, FOR REAL MEN (AND WOMEN, I'M NOT SEXIST)";
 		startHardDifficulty.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.HardDifficulty));
 
+		Button startMission = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
+		startMission.GetComponentInChildren<Text>().text = "MISSION MODE, FOR HARDENED VETERANS";
+		startMission.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionMode));
+
 		Button quitGameButton = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
 		quitGameButton.GetComponentInChildren<Text>().text = "QUIT, FOR HATERS, LOSERS, AND QUITTERS";
 		quitGameButton.onClick.AddListener( ()=> Application.Quit() );
@@ -50,5 +54,6 @@ public enum Scenes{
 	MainMenu,
 	EasyDifficulty,
 	NormalDifficulty,
-	HardDifficulty
+	HardDifficulty,
+	MissionMode
 };
