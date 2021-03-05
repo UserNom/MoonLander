@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/HardMode.unity
     guid: b2f605f3c13c724529d0a7b2a03c4c80
   - enabled: 1
-    path: Assets/Scenes/MissionMode.unity
+    path: Assets/Scenes/MissionEasyMode.unity
     guid: c1389a9092808e79ba590035244e6071
+  - enabled: 1
+    path: Assets/Scenes/MissionHardMode.unity
+    guid: b5894908c4138aec887bffa7c2ac4a08
   m_configObjects: {}

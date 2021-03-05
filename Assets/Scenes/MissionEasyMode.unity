@@ -921,9 +921,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1269045731}
   - component: {fileID: 1269045730}
+  - component: {fileID: 1269045727}
   - component: {fileID: 1269045729}
   - component: {fileID: 1269045728}
-  - component: {fileID: 1269045727}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1036,11 +1036,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269045726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37995937c86287db0a44ef293c0c6aee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd2ebde3ca74cf72aaf754694f95fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseMusic:
+  - {fileID: 8300000, guid: 28523735b92c854b5bb7c05ade6c4a53, type: 3}
+  - {fileID: 8300000, guid: c05b2bd1a7e270e8a91bbe49ab025aa7, type: 3}
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
+  title:
+  - Failure
+  - You lose
+  - Mission failed
+  messages:
+  - '
+
+    I believe in you! Try again!
+
+
+    You can do it! You can click the quit
+    button!'
+  - '...This is my life.
+
+
+    I''m sitting here, alone, at 01h00, writing game over
+    messages to a complete and utter loser.
+
+
+    Where did I go wrong?'
+  - "You know, if Darwin had been observing you, \nI bet he never would have come
+    up with that \n\"Survival of the fittest\" stuff."
+  - '
+
+    Have you tried not being a loser?'
+  - ' You''re aware this is easy mode, right?'
 --- !u!114 &1269045729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,12 +1079,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1269045726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad07cf221452ca349d020506719f815, type: 3}
+  m_Script: {fileID: 11500000, guid: 4420f6e8f92af88b5beabd888414901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
-  player: {fileID: 1579544408}
+  winMusic:
+  - {fileID: 8300000, guid: 1e7a93d06c7ef9771aba751364913d7c, type: 3}
+  - {fileID: 8300000, guid: 9233006fe3735af9cabc8ff6ddf1d01f, type: 3}
+  - {fileID: 8300000, guid: ff8dac99db62e3065b1ffc04627e5a9a, type: 3}
+  title: Mission complete
+  messages:
+  - Proud of you, son
+  - The reward for a mission well done is another mission.
+  - "Is this getting too easy? \n\nTry the mission to the Lunar South Pole for some
+    excitement!"
+  - Are you feeling accomplished yet?
+  - 'That was too easy...
+
+
+    Did I leave the game in debug mode?'
 --- !u!114 &1269045730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1179,7 +1222,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2040839945, guid: ca7adfb202eb148e784f992483bff2aa, type: 3}
       propertyPath: fuel
-      value: 160
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 2040839945, guid: ca7adfb202eb148e784f992483bff2aa, type: 3}
       propertyPath: explosion
@@ -1216,7 +1259,7 @@ PrefabInstance:
     - target: {fileID: 7890497049309187373, guid: ca7adfb202eb148e784f992483bff2aa,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7890497049309187373, guid: ca7adfb202eb148e784f992483bff2aa,
         type: 3}
@@ -1692,7 +1735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   landingPadWidth: 10
-  smoothingPasses: 7
+  smoothingPasses: 14
   numLandingLocations: {x: 2, y: 5}
   landingPad: {fileID: 8382284706329167738, guid: fb181dcef976ebee690f1361ec7fc4da,
     type: 3}

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 	[SerializeField]
 	private GameObject explosion;
 	[SerializeField]
-	private AudioClip rocketSound, explosionSound,fatalDamageCrashSound;
+	private AudioClip rocketSound, explosionSound,fatalDamageCrashSound, boostSound;
 	[SerializeField]
 	private float instaDeathCapsuleImpactForce,instaDeathLegImpactForce,fatalDamageLegImpactForce;
 
@@ -28,13 +28,14 @@ public class PlayerController : MonoBehaviour
 	private List<ContactPoint> contacts = new List<ContactPoint>(5);
 	private int altitudeLayerMask = 1<<9 | 1<<11 | 1<<12 | 1<<13;
 	private AudioSource audioSource;
-
+	private float fuelCapacity;
 
 	
 
     // Start is called before the first frame update
     void Start()
     {
+		fuelCapacity = fuel;
         rb = GetComponent<Rigidbody>();
 		mainThruster = GetComponentInChildren<ParticleSystem>();
 		audioSource = GetComponent<AudioSource>();
@@ -132,6 +133,18 @@ public class PlayerController : MonoBehaviour
 			return 0;
 		}
 		return fuel;
+	}
+
+	public void Refuel(float percent){
+		fuel += fuelCapacity*percent/100;
+		if (fuel>fuelCapacity){
+			fuel = fuelCapacity;
+		}
+	}
+
+	public void Boost(Vector3 boostVector){
+		rb.AddForce(boostVector);
+		AudioSource.PlayClipAtPoint(boostSound, rb.position);
 	}
 
 	public float GetAltitude(){

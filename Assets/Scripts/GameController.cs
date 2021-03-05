@@ -93,4 +93,25 @@ public class GameController : MonoBehaviour
 		yield return new WaitForSeconds(t);
 		x();
 	}
+/*
+	Event listeners?
+		Landed
+		Landed on pad
+		Landed on terrain
+		TookFatalDamage
+		LanderExploded
+		OutOfFuel
+		OutOfO2
+		*/
+
+
+	public void RefuelLander(float percent){
+		GetComponentInChildren<PlayerController>().Refuel(percent);
+	}
+
+	public void BoostLander(Vector3 boostVector){
+		GetComponentInChildren<PlayerController>().Boost(boostVector);
+	}
+
+
 }

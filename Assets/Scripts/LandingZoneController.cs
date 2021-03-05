@@ -14,6 +14,9 @@ public class LandingZoneController : MonoBehaviour
 	private Material padMaterial;
 	private Color originalPadColor, originalPadEmissionColor;
 
+	private float missionRefuelPercent = 60;
+	private Vector3 missionRefuelBoost = Vector3.up*300;
+
 	private static List<LandingZoneController> landingPads = new List<LandingZoneController>();
 
 	private void Awake() {
@@ -43,7 +46,9 @@ public class LandingZoneController : MonoBehaviour
 		yield return new  WaitForSeconds(t);
 		if(landingPads.Count>1 && landingPads.Contains(this)){
 			landingPads.Remove(this);
-			Destroy(this);
+			Destroy(gameObject);
+			GetComponentInParent<GameController>().RefuelLander(missionRefuelPercent);
+			GetComponentInParent<GameController>().BoostLander(missionRefuelBoost);
 			yield break;
 		}
 		Debug.Log("U Win!!!!!11!");

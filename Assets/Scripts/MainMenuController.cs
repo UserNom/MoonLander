@@ -30,13 +30,17 @@ public class MainMenuController : MonoBehaviour
 		startNormalDifficulty.GetComponentInChildren<Text>().text = "NORMAL MODE, FOR TRUE GAMERS";
 		startNormalDifficulty.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.NormalDifficulty));
 
+		Button startMission = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
+		startMission.GetComponentInChildren<Text>().text = "MISSION TO MARE TRANQUILLITATIS, FOR A RELAXING TIME";
+		startMission.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeEasy));
+
+		Button startMissionSouth = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
+		startMissionSouth.GetComponentInChildren<Text>().text = "MISSION TO THE SOUTH POLE, FOR A CHALLENGE";
+		startMissionSouth.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeHard));
+
 		Button startHardDifficulty = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
 		startHardDifficulty.GetComponentInChildren<Text>().text = "HARD MODE, FOR REAL MEN (AND WOMEN, I'M NOT SEXIST)";
 		startHardDifficulty.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.HardDifficulty));
-
-		Button startMission = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
-		startMission.GetComponentInChildren<Text>().text = "MISSION MODE, FOR HARDENED VETERANS";
-		startMission.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionMode));
 
 		Button quitGameButton = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
 		quitGameButton.GetComponentInChildren<Text>().text = "QUIT, FOR HATERS, LOSERS, AND QUITTERS";
@@ -55,5 +59,6 @@ public enum Scenes{
 	EasyDifficulty,
 	NormalDifficulty,
 	HardDifficulty,
-	MissionMode
+	MissionModeEasy,
+	MissionModeHard
 };
