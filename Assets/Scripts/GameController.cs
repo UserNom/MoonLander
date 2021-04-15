@@ -28,18 +28,42 @@ public class GameController : MonoBehaviour
 		LanderExploded
 		OutOfFuel
 		OutOfO2
-		
+		gamestarted (move ship super high then to proper altitude)
+		do it!
+		https://docs.microsoft.com/en-us/dotnet/standard/events/
 		
 	*/
 
+
+	[SerializeField]
+	Scenes gameType;
+	
 	private GameWin gameWin;
 	//[SerializeField]
 	private GameLoss gameLoss;
+
+	private GameResults levelResults;
+
+	private static List<GameResults> gameResultsList = new List<GameResults>(); 
+
+	public static GameResults GetLastGameResults(){
+		if(gameResultsList.Count == 0){
+			return null;
+		}
+		return gameResultsList[gameResultsList.Count-1];
+	}
+
     // Start is called before the first frame update
     void Start()
     {
         gameWin = GetComponent<GameWin>();
 		gameLoss = GetComponent<GameLoss>();
+
+
+		levelResults = new GameResults(gameType);
+		gameResultsList.Add(levelResults);
+
+		
     }
 
     // Update is called once per frame
@@ -59,6 +83,8 @@ public class GameController : MonoBehaviour
     }
 
 	public void Win(){
+		levelResults.gameWon = true;
+		levelResults.fuelLeft = GetComponentInChildren<PlayerController>().GetRemainingFuel();
 		if(gameWin!=null){
 			gameWin.OnGameWin();
 		}else{
@@ -68,6 +94,7 @@ public class GameController : MonoBehaviour
 	}
 
 	public void Lose(float t = 2f){
+		levelResults.gameWon = false;
 		if(gameLoss!=null){
 			WaitThen(t, ()=>gameLoss.OnGameLoss() );
 		}else{
