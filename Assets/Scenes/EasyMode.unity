@@ -281,6 +281,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -489,6 +490,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -570,6 +572,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -720,6 +723,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1112,6 +1116,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 0
+  m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 2100000, guid: 9d195e0f1200c8de192f811355d4be10, type: 2}
   m_BakeLightProbesForTrees: 1
@@ -1180,6 +1185,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1283,11 +1289,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37995937c86287db0a44ef293c0c6aee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd2ebde3ca74cf72aaf754694f95fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseMusic: []
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
+  title:
+  - YOU LOSE
+  messages:
+  - YOU LOST. I SUGGEST YOU TRY AGAIN.
+  showTryAgainButton: 1
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 1
 --- !u!114 &1713585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,13 +1311,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d1de33728d22d4e1bc6a97990bb7691, type: 3}
+  m_Script: {fileID: 11500000, guid: 4420f6e8f92af88b5beabd888414901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winMusic:
-  - {fileID: 8300000, guid: ab8427874df600b2fb4af53ca75e9b3d, type: 3}
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
+  winMusic:
+  - {fileID: 8300000, guid: ab8427874df600b2fb4af53ca75e9b3d, type: 3}
+  title: You win
+  messages:
+  - 'YOU WANT A MEDAL OR SOMETHING?
+
+    GO PLAY IN NORMAL MODE YOU WUSS.'
+  showTryAgainButton: 0
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 0
 --- !u!82 &1713585337
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1443,6 +1465,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

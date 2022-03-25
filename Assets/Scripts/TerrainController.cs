@@ -15,7 +15,7 @@ public class TerrainController : MonoBehaviour{
 	public  GameObject landingPad;
 	
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
 		landingSites = Random.Range(numLandingLocations.x, numLandingLocations.y);
         Terrain t = GetComponent<Terrain>();

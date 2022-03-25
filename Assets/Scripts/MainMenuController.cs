@@ -30,22 +30,37 @@ public class MainMenuController : MonoBehaviour
 		startNormalDifficulty.GetComponentInChildren<Text>().text = "NORMAL MODE, FOR TRUE GAMERS";
 		startNormalDifficulty.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.NormalDifficulty));
 
-		Button startMission = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
-		startMission.GetComponentInChildren<Text>().text = "MISSION TO MARE TRANQUILLITATIS, FOR A RELAXING TIME";
-		startMission.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeEasy));
-
-		Button startMissionSouth = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
-		startMissionSouth.GetComponentInChildren<Text>().text = "MISSION TO THE SOUTH POLE, FOR A CHALLENGE";
-		startMissionSouth.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeHard));
-
 		Button startHardDifficulty = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
 		startHardDifficulty.GetComponentInChildren<Text>().text = "HARD MODE, FOR REAL MEN (AND WOMEN, I'M NOT SEXIST)";
 		startHardDifficulty.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.HardDifficulty));
+
+		insertSpacer(30);
+		
+
+		Button startMission = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
+		startMission.GetComponentInChildren<Text>().text = "MISSION TO MARE TRANQUILLITATIS, FOR CAREER ASTRONAUTS";
+		startMission.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeEasy));
+
+		Button startMissionSouth = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
+		startMissionSouth.GetComponentInChildren<Text>().text = "MISSION TO THE SOUTH POLE, FOR ELITE PIONEERS";
+		startMissionSouth.onClick.AddListener( ()=> SceneManager.LoadScene((int)Scenes.MissionModeHard));
+
+		insertSpacer(30);
 
 		Button quitGameButton = Instantiate(menuItemPrefab, Vector3.zero, Quaternion.identity, menu.transform);
 		quitGameButton.GetComponentInChildren<Text>().text = "QUIT, FOR HATERS, LOSERS, AND QUITTERS";
 		quitGameButton.onClick.AddListener( ()=> Application.Quit() );
     }
+
+	private void insertSpacer(float size){
+		GameObject spacer = new GameObject();
+		spacer.AddComponent<RectTransform>();
+		//spacer.GetComponent<Text>().fontSize = size;
+		//spacer.GetComponent<Text>().text = " ";
+		//spacer.GetComponent<Text>().transform.
+		spacer.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
+		spacer.transform.parent = menu.transform;
+	} 
 
     // Update is called once per frame
     void Update()

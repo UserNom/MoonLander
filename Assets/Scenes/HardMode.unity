@@ -281,6 +281,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -489,6 +490,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -570,6 +572,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -720,6 +723,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1112,6 +1116,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 0
+  m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 2100000, guid: 9d195e0f1200c8de192f811355d4be10, type: 2}
   m_BakeLightProbesForTrees: 1
@@ -1180,6 +1185,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1379,14 +1385,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd782a726c2fa86f2a02c1c1117c0359, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd2ebde3ca74cf72aaf754694f95fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winMusic:
+  loseMusic:
   - {fileID: 8300000, guid: 37cf6f8bfe24aa93cb10a9202feb817b, type: 3}
   - {fileID: 8300000, guid: 609d208b3d944d3d4b327910ad2ea037, type: 3}
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
+  title:
+  - YOU MADE AN ATTEMPT
+  messages:
+  - 'BUT YOU FAILED!
+
+    YOU WERE TRIED AND FOUND LACKING!
+
+    GO PLAY IN NORMAL
+    MODE, YOU GOD DAMNED WIMP.'
+  showTryAgainButton: 0
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 0
 --- !u!114 &1713585337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,12 +1414,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad07cf221452ca349d020506719f815, type: 3}
+  m_Script: {fileID: 11500000, guid: 4420f6e8f92af88b5beabd888414901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
-  player: {fileID: 2040839945}
+  winMusic: []
+  title: What
+  messages:
+  - "\nUhhhh...\n\n\nWhat?\n\n\nCheater! YOU'RE A GODDAM HACKER! I'LL REPORT YOU!
+    \nYOU'LL BE VAC BANNED FOREVER!!!1!!!1!\nHACKER HACKER HACKER!!!!11!1!\nAAAAAAAAAA!!!!
+    AAAAAAAAAA!!!! AAAAAAA!!!!!!\nI'LL TELL YOUR MOM!!!1!  AAAAAAAA!! \nYOU'RE IN
+    SO MUCH TROUBLE! MY PARENTS WORK FOR THE MOSSAD AND THE CIA AND THE FSB!\nI KNOW
+    YOUR IP!!11!1! AAAAAAAAAAAAA\nI HATE YOU REEEEEEEEEEEEEEEEE!!!"
+  showTryAgainButton: 0
+  showBackToMainMenuButton: 0
+  showRageQuitButton: 1
 --- !u!1 &1928538164
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1473,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

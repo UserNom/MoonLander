@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
 	private GameResults levelResults;
 
 	private static List<GameResults> gameResultsList = new List<GameResults>(); 
+	private bool gameOver = false;
 
 	public static GameResults GetLastGameResults(){
 		if(gameResultsList.Count == 0){
@@ -61,7 +62,7 @@ public class GameController : MonoBehaviour
 
 
 		levelResults = new GameResults(gameType);
-		gameResultsList.Add(levelResults);
+		
 
 		
     }
@@ -82,9 +83,21 @@ public class GameController : MonoBehaviour
 		}
     }
 
-	public void Win(){
-		levelResults.gameWon = true;
+	private void SetGameResults(bool gameWon){
+		if(gameOver){
+			return;
+		}
+		gameOver = true;
+		levelResults.gameWon = gameWon;
 		levelResults.fuelLeft = GetComponentInChildren<PlayerController>().GetRemainingFuel();
+		gameResultsList.Add(levelResults);
+	}
+
+	public void Win(){
+		if(gameOver){
+			return;
+		}
+		SetGameResults(true);
 		if(gameWin!=null){
 			gameWin.OnGameWin();
 		}else{
@@ -94,7 +107,10 @@ public class GameController : MonoBehaviour
 	}
 
 	public void Lose(float t = 2f){
-		levelResults.gameWon = false;
+		if(gameOver){
+			return;
+		}
+		SetGameResults(false);
 		if(gameLoss!=null){
 			WaitThen(t, ()=>gameLoss.OnGameLoss() );
 		}else{
@@ -113,7 +129,7 @@ public class GameController : MonoBehaviour
 	}
 
 	public void WaitThen(float t , UnityAction x){
-		StartCoroutine( _WaitThen(t, ()=>gameLoss.OnGameLoss() ) );
+		StartCoroutine( _WaitThen(t, x ) );
 	}
 
 	private IEnumerator _WaitThen(float t , UnityAction x){

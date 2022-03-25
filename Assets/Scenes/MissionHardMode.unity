@@ -603,6 +603,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 0
+  m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 2100000, guid: 9d195e0f1200c8de192f811355d4be10, type: 2}
   m_BakeLightProbesForTrees: 1
@@ -735,6 +736,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -957,6 +959,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1053,6 +1056,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1149,6 +1153,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1233,14 +1238,17 @@ MonoBehaviour:
   - 'Did you know the moon is not made of cheese?
 
 
-    I was really surprised when
-    I learned this too.'
+    I too was really surprised
+    when I learned this.'
   - '
 
     You''ll never amount to anything if you keep landing on the Moon.
 
     Stop
     wasting your time and go watch some TV like a normal kid.'
+  showTryAgainButton: 1
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 0
 --- !u!82 &1717383436
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1370,6 +1378,9 @@ MonoBehaviour:
   - "Look, please stop. \nI had fun laughing at you, but now I'm starting to feel
     bad."
   - Hey, did you know that if you press ALT+F4, you can access the cheat menu?
+  showTryAgainButton: 1
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 1
 --- !u!114 &1717383438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1464,6 +1475,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1653,6 +1665,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

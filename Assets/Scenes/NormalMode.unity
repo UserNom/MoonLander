@@ -281,6 +281,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -489,6 +490,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -570,6 +572,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -720,6 +723,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1112,6 +1116,7 @@ Terrain:
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 0
+  m_StaticShadowCaster: 0
   m_ReflectionProbeUsage: 1
   m_MaterialTemplate: {fileID: 2100000, guid: 9d195e0f1200c8de192f811355d4be10, type: 2}
   m_BakeLightProbesForTrees: 1
@@ -1180,6 +1185,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -1283,11 +1289,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37995937c86287db0a44ef293c0c6aee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5dd2ebde3ca74cf72aaf754694f95fc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseMusic:
+  - {fileID: 8300000, guid: 28523735b92c854b5bb7c05ade6c4a53, type: 3}
+  - {fileID: 8300000, guid: 63496088cd527f331aaa0965ecfa86d8, type: 3}
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
+  title:
+  - You lost
+  messages:
+  - Guess you should try again.
+  - You're not a quitter, are you?
+  - I suggest you try again.
+  showTryAgainButton: 1
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 1
 --- !u!114 &1713585336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,12 +1315,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713585332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad07cf221452ca349d020506719f815, type: 3}
+  m_Script: {fileID: 11500000, guid: 4420f6e8f92af88b5beabd888414901a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   endScreen: {fileID: 888403423478522250, guid: 7505865d87ba0416694b77836c39397b,
     type: 3}
-  player: {fileID: 2040839945}
+  winMusic:
+  - {fileID: 8300000, guid: 1d797176b0a9e61e986578c64c9067b2, type: 3}
+  title: You win!
+  messages:
+  - "You have {FUEL_LEFT} liters of fuel REMAINING. \nI AM PROUD OF YOU.\nYOUR NATION
+    IS PROUD OF YOU.\nNOW DO IT AGAIN AND SAVE MORE FUEL THIS TIME."
+  showTryAgainButton: 1
+  showBackToMainMenuButton: 1
+  showRageQuitButton: 0
 --- !u!82 &1713585337
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1442,6 +1468,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
